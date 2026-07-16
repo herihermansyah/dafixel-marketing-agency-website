@@ -1,6 +1,7 @@
 import type {Metadata} from "next";
 import {Hanken_Grotesk, Plus_Jakarta_Sans} from "next/font/google";
 import "./globals.css";
+import Layout from "@/layouts/layout";
 
 const hkGrotesk = Hanken_Grotesk({
   subsets: ["latin"],
@@ -66,7 +67,9 @@ export default function RootLayout({
       lang="en"
       className={`${hkGrotesk.className} ${jakartaSans.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <Layout>{children}</Layout>
+      </body>
     </html>
   );
 }
