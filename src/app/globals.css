@@ -4,4 +4,7 @@
   /* container */
   --container-wide: 1720px;
   --container-main: 1410px;
+
+  /* font */
+  --font-plus-jakarta-sans: var(--font-jakartaSans);
 }
