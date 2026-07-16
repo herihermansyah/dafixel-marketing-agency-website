@@ -1,15 +1,14 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import type {Metadata} from "next";
+import {Hanken_Grotesk, Plus_Jakarta_Sans} from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const hkGrotesk = Hanken_Grotesk({
   subsets: ["latin"],
+  variable: "--font-hkGrotesk",
 });
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const jakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
+  variable: "--font-jakartaSans",
 });
 
 export const metadata: Metadata = {
@@ -25,7 +24,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${hkGrotesk.className} ${jakartaSans.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
