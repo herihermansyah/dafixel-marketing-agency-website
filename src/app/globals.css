@@ -7,4 +7,7 @@
 
   /* font */
   --font-plus-jakarta-sans: var(--font-jakartaSans);
+
+  /* shadow */
+  --shadow-drop-down: 0px 3px 20px 0px rgba(0, 0, 0, 0.1);
 }
