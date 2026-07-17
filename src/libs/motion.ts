@@ -7,8 +7,9 @@ export const wrapperMotion: Variants = {
   visible: {
     opacity: 1,
     transition: {
-      delayChildren: 0.1,
-      staggerChildren: 0.1,
+      delayChildren: 0.2,
+      staggerChildren: 0.2,
+      ease: "easeInOut",
     },
   },
 };
@@ -16,7 +17,7 @@ export const wrapperMotion: Variants = {
 export const childMotion: Variants = {
   hidden: {
     opacity: 0,
-    y: -50,
+    y: -100,
   },
   visible: {
     opacity: 1,
