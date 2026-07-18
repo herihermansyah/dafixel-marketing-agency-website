@@ -1,12 +1,10 @@
-import Hero from "@/components/sections/home/hero";
-import HowItWorks from "@/components/sections/home/how-it-works";
+import HomeCompounded from "@/components/sections/home/home-compounded";
 import React from "react";
 
 const page = () => {
   return (
-    <div className="flex flex-col gap-30">
-      <Hero />
-      <HowItWorks />
+    <div>
+      <HomeCompounded />
     </div>
   );
 };
