@@ -1,19 +1,28 @@
 "use client";
 import React, {ComponentProps, forwardRef} from "react";
 import {motion} from "motion/react";
-import {childMotion, wrapperMotion, fadeMotion} from "@/libs/motion";
+import {
+  childMotion,
+  wrapperMotion,
+  fadeMotion,
+  bounceMotion,
+} from "@/libs/motion";
 
 // type motion div props
 type MotionDivProps = ComponentProps<typeof motion.div>;
 
 interface WrapperMotionType extends MotionDivProps {
   children?: React.ReactNode;
+  className?: string;
 }
 
 // ====================== wrapper    motion ======================
 
 const WrapperMotion = forwardRef<HTMLDivElement, WrapperMotionType>(
-  ({children, variants, initial, animate, viewport, ...props}, ref) => {
+  (
+    {children, variants, initial, animate, viewport, className, ...props},
+    ref,
+  ) => {
     // check whether the user is using the "whileInView"
     const hashWhileInView = props.whileInView !== undefined;
 
@@ -41,6 +50,7 @@ const WrapperMotion = forwardRef<HTMLDivElement, WrapperMotionType>(
         }
         {...props}
         ref={ref}
+        className={className}
       >
         {children}
       </motion.div>
@@ -53,21 +63,33 @@ WrapperMotion.displayName = "WrapperMotion";
 // ====================== child motion ======================
 
 const ChildMotion = forwardRef<HTMLDivElement, WrapperMotionType>(
-  ({children, ...props}, ref) => {
+  ({children, className, ...props}, ref) => {
     return (
-      <motion.div variants={childMotion} ref={ref} {...props}>
+      <motion.div
+        className={className}
+        variants={childMotion}
+        ref={ref}
+        {...props}
+      >
         {children}
       </motion.div>
     );
   },
 );
 
+// ====================== fade motion ======================
+
 ChildMotion.displayName = "ChildMotion";
 
 const FadeMotion = forwardRef<HTMLDivElement, WrapperMotionType>(
-  ({children, ...props}, ref) => {
+  ({children, className, ...props}, ref) => {
     return (
-      <motion.div variants={fadeMotion} ref={ref} {...props}>
+      <motion.div
+        className={className}
+        variants={fadeMotion}
+        ref={ref}
+        {...props}
+      >
         {children}
       </motion.div>
     );
@@ -76,4 +98,23 @@ const FadeMotion = forwardRef<HTMLDivElement, WrapperMotionType>(
 
 FadeMotion.displayName = "FadeMotion";
 
-export {WrapperMotion, ChildMotion, FadeMotion};
+// ====================== bounce motion ======================
+
+const BounceMotion = forwardRef<HTMLDivElement, WrapperMotionType>(
+  ({children, className, ...props}, ref) => {
+    return (
+      <motion.div
+        className={className}
+        variants={bounceMotion}
+        ref={ref}
+        {...props}
+      >
+        {children}
+      </motion.div>
+    );
+  },
+);
+
+BounceMotion.displayName = "BounceMotion";
+
+export {WrapperMotion, ChildMotion, FadeMotion, BounceMotion};
