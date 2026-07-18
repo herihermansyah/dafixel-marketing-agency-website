@@ -11,3 +11,15 @@
   /* shadow */
   --shadow-drop-down: 0px 3px 20px 0px rgba(0, 0, 0, 0.1);
 }
+
+/* bg highlight recomended for text stabilo effect */
+@utility bg-highlight {
+  background-image: linear-gradient(
+    to top,
+    var(--color-orange-50),
+    var(--color-orange-100)
+  );
+  background-size: 100% 20px;
+  background-position: bottom 10px left 0px;
+  background-repeat: no-repeat;
+}
