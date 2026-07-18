@@ -7,7 +7,7 @@ const Layout = ({children}: {children: React.ReactNode}) => {
       <header className="sticky top-0 z-50">
         <Header />
       </header>
-      <main className="grow my-5">{children}</main>
+      <main className="grow my-5 mb-50">{children}</main>
       <footer></footer>
     </div>
   );
