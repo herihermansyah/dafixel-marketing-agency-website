@@ -48,7 +48,7 @@ const Header = () => {
             className={cn(
               "flex flex-col items-center gap-11",
               "absolute left-1/2 -translate-x-1/2",
-              "bg-white w-screen py-10",
+              "bg-white w-full py-10",
               "shadow-drop-down",
               "-z-2",
               "lg:hidden",
