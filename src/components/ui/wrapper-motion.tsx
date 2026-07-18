@@ -1,7 +1,7 @@
 "use client";
 import React, {ComponentProps, forwardRef} from "react";
 import {motion} from "motion/react";
-import {childMotion, wrapperMotion} from "@/libs/motion";
+import {childMotion, wrapperMotion, fadeMotion} from "@/libs/motion";
 
 // type motion div props
 type MotionDivProps = ComponentProps<typeof motion.div>;
@@ -64,4 +64,16 @@ const ChildMotion = forwardRef<HTMLDivElement, WrapperMotionType>(
 
 ChildMotion.displayName = "ChildMotion";
 
-export {WrapperMotion, ChildMotion};
+const FadeMotion = forwardRef<HTMLDivElement, WrapperMotionType>(
+  ({children, ...props}, ref) => {
+    return (
+      <motion.div variants={fadeMotion} ref={ref} {...props}>
+        {children}
+      </motion.div>
+    );
+  },
+);
+
+FadeMotion.displayName = "FadeMotion";
+
+export {WrapperMotion, ChildMotion, FadeMotion};
