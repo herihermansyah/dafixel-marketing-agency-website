@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
+import BlogCard from "@/components/blog-card";
+import HeroBlog from "@/components/sections/blog/hero-blog";
 
 const page = () => {
   return (
-    <div>page</div>
-  )
-}
+    <div>
+      <HeroBlog />
+      <BlogCard />
+    </div>
+  );
+};
 
-export default page
+export default page;
