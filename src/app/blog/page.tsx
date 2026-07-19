@@ -1,11 +1,11 @@
 import React from "react";
 import BlogCard from "@/components/blog-card";
-import HeroBlog from "@/components/sections/blog/hero-blog";
+import WaveHeader from "@/components/wave-header";
 
 const page = () => {
   return (
     <div>
-      <HeroBlog />
+      <WaveHeader title="DaPixel Blog" subTitle="Digital marketing articles" />
       <BlogCard />
     </div>
   );
