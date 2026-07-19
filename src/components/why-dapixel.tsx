@@ -3,11 +3,20 @@ import WrapperContent from "./ui/wrapper-content";
 import Button from "./ui/button";
 import Image from "next/image";
 import {ChildMotion, WrapperMotion} from "./ui/wrapper-motion";
+import {cn} from "@/libs/utils";
+interface WhyDapixelProps {
+  className?: string;
+}
 
-const WhyDapixel = () => {
+const WhyDapixel = ({className}: WhyDapixelProps) => {
   return (
     <WrapperMotion whileInView={"visible"}>
-      <WrapperContent className="grid grid-cols-1 lg:grid-cols-2 gap-30 items-center">
+      <WrapperContent
+        className={cn(
+          "grid grid-cols-1 lg:grid-cols-2 gap-30 items-center",
+          className,
+        )}
+      >
         <ChildMotion>
           <div className="flex flex-col items-start gap-5">
             <ChildMotion>
