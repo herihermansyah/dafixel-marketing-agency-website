@@ -3,7 +3,6 @@ import RecentsBlog from "@/components/recents-blog";
 import Hero from "@/components/sections/home/hero";
 import HowItWorks from "@/components/sections/home/how-it-works";
 import Testimonials from "@/components/testimonials";
-import WhyDapixel from "@/components/why-dapixel";
 
 const HomeCompounded = () => {
   return (
@@ -13,7 +12,6 @@ const HomeCompounded = () => {
       <ConsultationCta />
       <Testimonials />
       <RecentsBlog />
-      <WhyDapixel />
     </div>
   );
 };
