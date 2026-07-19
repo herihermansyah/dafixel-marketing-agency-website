@@ -1,3 +1,4 @@
+import React from "react";
 import Shape001 from "@/assets/shape-001";
 import WrapperContent from "@/components/ui/wrapper-content";
 import {
@@ -5,9 +6,13 @@ import {
   FadeMotion,
   WrapperMotion,
 } from "@/components/ui/wrapper-motion";
-import React from "react";
 
-const HeroBlog = () => {
+interface WaveHeaderProps {
+  title?: string;
+  subTitle?: string;
+}
+
+const WaveHeader = ({title, subTitle}: WaveHeaderProps) => {
   return (
     <WrapperMotion>
       <section className="relative overflow-hidden h-155">
@@ -15,12 +20,12 @@ const HeroBlog = () => {
           <div className="flex flex-col items-start gap-3 relative z-10 top-15">
             <ChildMotion>
               <h2 className="text-[53px] md:text-[76px] font-bold leading-[130%] font-plus-jakarta-sans">
-                DaPixel Blog
+                {title}
               </h2>
             </ChildMotion>
             <ChildMotion>
               <p className="text-[24px] text-orange-300 font-medium leading-[110%]">
-                Digital marketing articles
+                {subTitle}
               </p>
             </ChildMotion>
           </div>
@@ -33,4 +38,4 @@ const HeroBlog = () => {
   );
 };
 
-export default HeroBlog;
+export default WaveHeader;
