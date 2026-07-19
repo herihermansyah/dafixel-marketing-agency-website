@@ -5,7 +5,7 @@ import {cn} from "@/libs/utils";
 import {motion, HTMLMotionProps} from "motion/react";
 
 const buttonVariants = cva(
-  "flex items-center gap-2 font-semibold whitespace-nowrap cursor-pointer disabled:cursor-not-allowed",
+  "flex items-center gap-2 font-semibold whitespace-nowrap cursor-pointer disabled:cursor-not-allowed overflow-hidden",
   {
     variants: {
       variant: {
