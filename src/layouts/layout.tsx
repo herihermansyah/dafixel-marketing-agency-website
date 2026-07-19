@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./header";
 import Footer from "./footer";
+import WhyDapixel from "@/components/why-dapixel";
 
 const Layout = ({children}: {children: React.ReactNode}) => {
   return (
@@ -8,7 +9,10 @@ const Layout = ({children}: {children: React.ReactNode}) => {
       <header className="sticky top-0 z-50">
         <Header />
       </header>
-      <main className="grow my-5 mb-50">{children}</main>
+      <main className="grow my-20 mb-50">
+        {children}
+        <WhyDapixel className="mt-30" />
+      </main>
       <footer>
         <Footer />
       </footer>
