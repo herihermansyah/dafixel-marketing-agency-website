@@ -10,9 +10,9 @@ import React from "react";
 const HeroBlog = () => {
   return (
     <WrapperMotion>
-      <section className="relative overflow-hidden h-115">
+      <section className="relative overflow-hidden h-155">
         <WrapperContent>
-          <div className="flex flex-col items-start gap-3 relative z-10 ">
+          <div className="flex flex-col items-start gap-3 relative z-10 top-15">
             <ChildMotion>
               <h2 className="text-[53px] md:text-[76px] font-bold leading-[130%] font-plus-jakarta-sans">
                 DaPixel Blog
