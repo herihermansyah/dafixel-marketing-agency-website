@@ -1,5 +1,5 @@
 import React from "react";
-import {WrapperMotion} from "./ui/wrapper-motion";
+import {ChildMotion, WrapperMotion} from "./ui/wrapper-motion";
 import WrapperContent from "./ui/wrapper-content";
 import Button from "./ui/button";
 import {GrAnnounce} from "react-icons/gr";
@@ -24,7 +24,7 @@ const ServiceCard = () => {
   const rightColumn = serviceData.filter((item) => item.id % 2 === 0);
   const leftColumn = serviceData.filter((item) => item.id % 2 !== 0);
   return (
-    <WrapperMotion>
+    <WrapperMotion whileInView={"visible"}>
       <WrapperContent>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           <div className="flex flex-col gap-10">
@@ -32,6 +32,7 @@ const ServiceCard = () => {
               <ServiceContent key={item.id} item={item} />
             ))}
           </div>
+
           <div className="flex flex-col gap-10 lg:mt-25">
             {rightColumn.map((item) => (
               <ServiceContent key={item.id} item={item} />
@@ -49,22 +50,24 @@ interface ServiceCardProps {
 
 const ServiceContent = ({item}: ServiceCardProps) => {
   return (
-    <div
-      className={cn(
-        "flex flex-col gap-10 shadow-drop-down py-20 px-10 rounded-3xl bg-white",
-      )}
-    >
-      <div className="self-start text-[82px] -rotate-35">
-        <span>{item.icon}</span>
+    <ChildMotion>
+      <div
+        className={cn(
+          "flex flex-col gap-10 shadow-drop-down py-20 px-10 rounded-3xl bg-white",
+        )}
+      >
+        <div className="self-start text-[82px] -rotate-35">
+          <span>{item.icon}</span>
+        </div>
+        <div className="flex flex-col gap-5">
+          <h3 className="text-[28px] font-bold font-plus-jakarta-sans capitalize">
+            {item.title}
+          </h3>
+          <p className="text-[18px] font-medium">{item.description}</p>
+          <Button>Book a free 30 minute meeting</Button>
+        </div>
       </div>
-      <div className="flex flex-col gap-5">
-        <h3 className="text-[28px] font-bold font-plus-jakarta-sans capitalize">
-          {item.title}
-        </h3>
-        <p className="text-[18px] font-medium">{item.description}</p>
-        <Button>Book a free 30 minute meeting</Button>
-      </div>
-    </div>
+    </ChildMotion>
   );
 };
 
