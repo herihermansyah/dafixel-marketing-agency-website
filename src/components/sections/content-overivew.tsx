@@ -4,7 +4,7 @@ import WrapperContent from "../ui/wrapper-content";
 
 const ContentOverivew = () => {
   return (
-    <WrapperMotion>
+    <WrapperMotion whileInView={"visible"}>
       <section className="bg-orange-300 py-30">
         <WrapperContent className="flex flex-col gap-11 text-center">
           <ChildMotion>
