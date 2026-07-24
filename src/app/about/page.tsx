@@ -1,9 +1,14 @@
-import React from 'react'
+import GetInTouch from "@/components/get-in-touch";
+import AboutHero from "@/components/sections/about-hero";
+import React from "react";
 
 const page = () => {
   return (
-    <div>page</div>
-  )
-}
+    <div>
+      <AboutHero />
+      <GetInTouch />
+    </div>
+  );
+};
 
-export default page
+export default page;
