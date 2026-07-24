@@ -1,5 +1,5 @@
-import ConsultationCta from "@/components/consultation-cta";
-import RecentsBlog from "@/components/recents-blog";
+import ConsultationCta from "@/components/sections/consultation-cta";
+import RecentsBlog from "@/components/sections/recents-blog";
 import Hero from "@/components/sections/hero";
 import HowItWorks from "@/components/how-it-works";
 import Testimonials from "@/components/testimonials";
